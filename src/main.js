@@ -13,6 +13,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 const $ = (s) => document.querySelector(s);
 const root = document.documentElement;
+// Phones often switch on "reduce motion" silently (Android battery saver → "Remove animations").
+// The site keeps its full animation either way; reduce-motion only drops the smooth-scroll glide.
 const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const isMobile = window.matchMedia('(max-width: 820px), (pointer: coarse)').matches;
 const hasWebGL = (() => {
@@ -24,14 +26,14 @@ const hasWebGL = (() => {
   }
 })();
 const params = new URLSearchParams(window.location.search);
-const staticMode = reduced || !hasWebGL || params.has('static');
+const staticMode = !hasWebGL || params.has('static');
 if (staticMode) root.classList.add('static-mode');
 document.body.classList.add('is-loading');
 
 /* ───────── smooth scroll ───────── */
 if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
 window.scrollTo(0, 0);
-const lenis = new Lenis({ lerp: 0.085, autoRaf: false, anchors: false });
+const lenis = new Lenis({ lerp: reduced ? 1 : 0.085, autoRaf: false, anchors: false });
 lenis.stop(); // locked until the intro finishes
 lenis.on('scroll', ScrollTrigger.update);
 gsap.ticker.add((t) => lenis.raf(t * 1000));
@@ -329,7 +331,6 @@ document.fonts?.addEventListener?.('loadingdone', relayout);
 
 /* ───────── section reveals ───────── */
 function initReveals() {
-  if (reduced) return;
   gsap.utils.toArray('.section__head > *, .cta__title, .cta__btns, .card, .footer__sig').forEach((el) => {
     gsap.from(el, {
       y: 40,
@@ -420,7 +421,7 @@ async function boot() {
   loader.classList.add('is-done');
   const loaderSig = $('.loader__sig');
 
-  if (!reduced) {
+  {
     gsap.set(loaderSig, { opacity: 1 });
     await drawSignature(loaderSig, { duration: 1.6, delay: 0.15 });
     await gsap.to(loaderSig, { opacity: 0, y: -10, duration: 0.5, delay: 0.4, ease: 'power2.in' }); // let the ink sit for a beat
@@ -436,8 +437,8 @@ async function boot() {
   gsap.fromTo(heroName, { opacity: 0 }, { opacity: 1, duration: 0.01, delay: exp ? 0.6 : 0, clearProps: 'opacity' });
   gsap.fromTo(heroName.firstElementChild, { yPercent: 110 }, { yPercent: 0, duration: 1.6, ease: 'expo.out', delay: exp ? 0.6 : 0 });
   // the big grey signature line slowly writes itself across the hero
-  if (!reduced) drawSignature(heroSig, { duration: 2.2, delay: exp ? 0.5 : 0.2 });
-  await gsap.to(loader, { opacity: 0, duration: reduced ? 0.2 : 0.8, ease: 'power2.out' });
+  drawSignature(heroSig, { duration: 2.2, delay: exp ? 0.5 : 0.2 });
+  await gsap.to(loader, { opacity: 0, duration: 0.8, ease: 'power2.out' });
   loader.remove();
   drawSignature($('.header__logo'), { duration: 1.6 });
   // full-page strips that make the fly-through tiles scroll like real sites (not needed for first paint)
