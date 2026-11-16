@@ -176,6 +176,13 @@ function fitName() {
 }
 fitName();
 
+/* document position of an element from layout alone (transforms ignored) */
+const layoutTop = (el) => {
+  let y = 0;
+  for (let n = el; n; n = n.offsetParent) y += n.offsetTop;
+  return y;
+};
+
 const hudIndex = $('#hud-index');
 const hudName = $('#hud-name');
 const outro = $('#fly-outro');
@@ -307,7 +314,7 @@ window.addEventListener('pointermove', (e) => {
 }, { passive: true });
 
 let rT;
-window.addEventListener('resize', () => {
+const relayout = () => {
   clearTimeout(rT);
   rT = setTimeout(() => {
     fitName();
@@ -315,7 +322,10 @@ window.addEventListener('resize', () => {
     exp?.resize();
     ScrollTrigger.refresh();
   }, 120);
-});
+};
+window.addEventListener('resize', relayout);
+// late font swaps (slow phones) change the name/copy height, so re-seat the face on the name
+document.fonts?.addEventListener?.('loadingdone', relayout);
 
 /* ───────── section reveals ───────── */
 function initReveals() {
@@ -383,7 +393,9 @@ async function boot() {
         mapImage,
         photoImage,
         isMobile,
-        getTextTop: () => Math.min(heroBottom.getBoundingClientRect().top, heroName.getBoundingClientRect().top) + lenis.animatedScroll,
+        // layout position (offsetTop ignores the scroll lift on the name/copy), so the face is seated on the
+        // name even when the page is opened already scrolled (scroll restoration) or resized mid-scroll
+        getTextTop: () => Math.min(layoutTop(heroBottom), layoutTop(heroName)),
         labelsEl: $('#fly-labels'),
         onHover: (item) => {
           cursor.setLabel(item ? 'View' : '');
