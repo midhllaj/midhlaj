@@ -52,7 +52,7 @@ export function renderContent(projects, { onCard }) {
     if (!p.featured) return;
     const cover = (p.screenshots || []).find((f) => f.startsWith('desktop')) || p.screenshots?.[0];
     const a = el('a', 'card');
-    a.href = p.url;
+    a.href = p.url || `#work-${p.id}`;
     a.dataset.cursor = 'Fly in';
     a.setAttribute('aria-label', `${p.name} — open in the fly-through`);
     const media = el('div', 'card__media');
@@ -88,7 +88,7 @@ export function renderContent(projects, { onCard }) {
   projects.forEach((p, i) => {
     const cover = (p.screenshots || []).find((f) => f.startsWith('desktop'));
     const a = el('a', 'card');
-    a.href = p.url;
+    a.href = p.url || `#work-${p.id}`;
     a.id = `work-${p.id}`;
     const media = el('div', 'card__media');
     if (cover) {
