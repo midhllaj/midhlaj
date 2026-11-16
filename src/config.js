@@ -7,9 +7,11 @@ export const site = {
   role: 'Designer & Developer',
   status: 'Taking on new projects',
   email: 'midhlaj268@gmail.com',
-  whatsapp: '', // ← digits only, international format, e.g. '9198XXXXXXXX'
+  whatsapp: '918714801971', // digits only, international format (91 = India)
+  phone: '+918714801971', // for tap-to-call links
+  phoneLabel: '+91 87148 01971',
   socials: {
-    instagram: '', // ← full URLs
+    instagram: 'https://www.instagram.com/midhllaj/', // full URLs; empty ones are hidden
     linkedin: '',
     github: '',
   },
