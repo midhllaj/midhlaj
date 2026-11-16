@@ -214,7 +214,7 @@ function frame(time, deltaTime) {
   const inFly = heroP > 0.6 && flyP < 0.92;
   document.body.classList.toggle('in-fly', inFly);
   const idx = clamp(Math.floor((-exp.s.camZ - FIRST + SEG * 0.75) / SEG), 0, projects.length - 1);
-  if (idx !== lastHud) {
+  if (idx !== lastHud && projects[idx]) {
     lastHud = idx;
     hudIndex.textContent = String(idx + 1).padStart(2, '0');
     hudName.textContent = projects[idx].name;
