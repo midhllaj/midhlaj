@@ -661,7 +661,7 @@ body.in-fly .fly__hud { opacity: 1; }
   .hero__sig svg path { stroke: #e4e4e1; }
   /* keep the logo and Menu legible over scrolling content */
   .header::before { inset: 0 0 -36px; opacity: 1; background: linear-gradient(var(--bg) 45%, color-mix(in srgb, var(--bg) 70%, transparent) 70%, transparent); }
-  .static-mode .hero__static { right: 50%; transform: translateX(50%); max-width: 100vw; height: 70vh; top: var(--header-h); bottom: auto; opacity: 0.45; }
+  .static-mode .hero__static { left: 50%; right: auto; transform: translateX(-50%); max-width: 100vw; height: 56svh; top: var(--header-h); bottom: auto; opacity: 0.9; }
   .section__head { grid-template-columns: 1fr; }
   .cards { grid-template-columns: 1fr; gap: 48px; }
   .cards .card:nth-child(even) { margin-top: 0; }
@@ -716,9 +716,7 @@ body.in-fly .fly__hud { opacity: 1; }
   .story__services li { padding: 7px 0; font-size: 13.5px; }
   .story__orb { width: 96px; font-size: 13px; }
 }
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
-}
+/* reduce-motion no longer strips the animation: the site is the animation (see main.js) */
 
 /* ── FAQ (also feeds search / answer engines: see src/data/seo.js) ── */
 .faq__list { padding: 0 0 clamp(80px, 10vw, 140px); }
