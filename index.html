@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Midhlaj — Designer &amp; Developer · Websites, Web Apps &amp; Mobile Apps</title>
+    <meta name="description" content="Midhlaj designs and builds websites, web platforms and mobile apps for businesses, startups and founders anywhere in the world, from brand sites and online stores to SaaS platforms and iOS apps." />
+    <meta name="theme-color" content="#0a0a0b" />
+    <link rel="canonical" href="__SITE_URL__/" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Midhlaj — Designer & Developer" />
+    <meta property="og:description" content="Websites, web platforms and mobile apps for businesses and founders, wherever they are." />
+    <meta property="og:image" content="__SITE_URL__/og.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:url" content="__SITE_URL__/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="__SITE_URL__/og.jpg" />
+    <script type="application/ld+json">
+      { "@context": "https://schema.org", "@type": "Person", "name": "Midhlaj", "jobTitle": "Designer & Developer", "url": "__SITE_URL__/", "image": "__SITE_URL__/assets/about.webp" }
+    </script>
+  </head>
+  <body>
+    <a class="skip" href="#selected">Skip to content</a>
+
+    <!-- Loader → signature intro -->
+    <div class="loader" id="loader" aria-hidden="true">
+      <div class="loader__sig" data-signature></div>
+      <div class="loader__bottom">
+        <span class="label">Loading selected work</span>
+        <span class="loader__count"><span id="loader-count">0</span></span>
+      </div>
+    </div>
+
+    <!-- behind the 3D canvas: the big signature line writes itself behind the face -->
+    <div class="hero-back" aria-hidden="true"><div class="hero__sig" data-signature></div></div>
+    <canvas class="webgl" id="webgl" aria-hidden="true"></canvas>
+    <div class="grain" aria-hidden="true"></div>
+    <div class="cursor" aria-hidden="true"><span class="cursor__label"></span></div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+      <a class="header__logo" href="#top" aria-label="Midhlaj — back to top" data-signature></a>
+      <div class="header__col header__col--status">
+        <span class="header__label">Currently:</span>
+        <span data-status></span>
+      </div>
+      <div class="header__col header__col--based">
+        <span class="header__label">Working with:</span>
+        <span>Clients worldwide</span>
+      </div>
+      <nav class="header__col header__nav" aria-label="Primary">
+        <span class="header__label">Navigation:</span>
+        <span><a href="#selected">Selected</a>, <a href="#work">Work</a>, <a href="#about">About</a>, <a href="#contact" data-open-contact>Contact</a></span>
+      </nav>
+      <button class="header__menu" id="menu-btn" aria-expanded="false" aria-controls="menu">Menu</button>
+    </header>
+
+    <div class="menu" id="menu" hidden>
+      <nav aria-label="Mobile">
+        <a href="#selected">Selected</a>
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#contact" data-open-contact>Contact</a>
+      </nav>
+      <div class="menu__foot">
+        <a data-email></a>
+        <div class="socials" data-socials></div>
+      </div>
+    </div>
+
+    <main>
+      <!-- Hero: the face mosaic -->
+      <section class="hero" id="top">
+        <img class="hero__static" src="/assets/mosaic.webp" alt="A mosaic of website and app screenshots forming Midhlaj's face" width="840" height="1080" loading="lazy" />
+        <div class="hero__bottom">
+          <div class="hero__inner">
+            <p class="hero__intro">
+              I design and build websites, web platforms and mobile apps for businesses, startups and anyone with an idea worth launching.
+              Scroll to explore the work.
+            </p>
+            <div class="hero__elsewhere">
+              <span class="header__label">Elsewhere:</span>
+              <div class="socials" data-socials="ig,li,gh"></div>
+            </div>
+          </div>
+          <div class="hero__ctas">
+            <a class="btn btn--ghost" href="#contact" data-open-contact>Start a project</a>
+            <a class="btn btn--pill" href="#work" data-cursor="Fly">Explore the work <span class="btn__icon" aria-hidden="true">↓</span></a>
+          </div>
+        </div>
+        <h1 class="hero__name" id="hero-name"><span>Midhlaj</span><span class="sr-only"> — Designer &amp; Developer</span></h1>
+      </section>
+
+      <!-- Fly-through (canvas is fixed behind; this section just provides scroll distance) -->
+      <section class="fly" id="work" aria-label="All work">
+        <div class="fly__hud" aria-hidden="true">
+          <span class="label"><span id="hud-index">01</span> / <span id="hud-total">05</span></span>
+          <span class="fly__hud-name" id="hud-name"></span>
+          <span class="label fly__hud-hint">Select a project to see the details</span>
+        </div>
+        <div class="fly__labels" id="fly-labels" aria-hidden="true"></div>
+        <div class="fly__caption" id="fly-caption" aria-hidden="true"></div>
+        <div class="fly__outro" id="fly-outro">
+          <div class="fly__outro-sig" data-signature></div>
+          <p class="label">Have a project in mind? <a href="#contact" data-open-contact>Let's talk ↗</a></p>
+        </div>
+        <!-- Static / reduced-motion fallback grid (filled from projects.json) -->
+        <div class="fly__grid wrap" id="fly-grid"></div>
+        <noscript>
+          <ul class="wrap">
+            <li><a href="https://linaul.com/">Linaul</a></li>
+            <li><a href="https://apps.apple.com/app/nudge-focus-timer-blocker/id6754453124">Nudge</a></li>
+            <li><a href="https://www.getourism.com/">Great Escapes Tourism</a></li>
+            <li><a href="https://www.afwajhgroup.com/">Afwajh Group of Companies</a></li>
+            <li><a href="https://www.dionpower.in/">Dion Power</a></li>
+            <li><a href="https://www.symboladvertisement.com">Symbol Advertising</a></li>
+            <li><a href="https://lovinflowers.vercel.app/">Lovin Flowers</a></li>
+          </ul>
+        </noscript>
+        <!-- About: slides sideways through the space beside the face at the end of the flight -->
+        <section class="story" id="about" aria-labelledby="story-title">
+          <div class="story__head">
+            <span class="label story__kicker">About</span>
+            <nav class="story__tabs" aria-label="About chapters">
+              <button type="button" data-to="0">Intro</button>
+              <button type="button" data-to="1">Approach</button>
+              <button type="button" data-to="2">Process</button>
+              <button type="button" data-to="6">Services</button>
+              <button type="button" data-to="7">Contact</button>
+            </nav>
+            <span class="story__count" aria-hidden="true"><span id="story-index">01</span><span class="story__count-sep"></span><span id="story-total">08</span></span>
+          </div>
+
+          <div class="story__window">
+            <div class="story__ghost" id="story-ghost" aria-hidden="true">Designer &amp; developer — Midhlaj — Designer &amp; developer — Midhlaj —</div>
+            <ol class="story__track" id="story-track">
+              <li class="story__card story__card--intro">
+                <div class="story__in">
+                  <span class="story__tag" data-rise><span>(01)</span> Intro</span>
+                  <div class="story__who">
+                    <p class="story__hi" data-rise style="--d: 1">Hi, I'm</p>
+                    <h2 class="story__name" id="story-title" data-rise style="--d: 2">Midhlaj.</h2>
+                    <p class="story__lede" data-rise style="--d: 3">A designer and developer who builds websites, web apps and mobile apps, from the first idea to launch day.</p>
+                  </div>
+                  <div class="story__intro-foot" data-rise style="--d: 4">
+                    <p class="story__status"><span class="story__dot" aria-hidden="true"></span><span data-status></span></p>
+                    <dl class="story__pairs">
+                      <div><dt class="label">Role</dt><dd>Designer &amp; developer</dd></div>
+                      <div><dt class="label">Working with</dt><dd>Clients worldwide</dd></div>
+                    </dl>
+                  </div>
+                </div>
+              </li>
+
+              <li class="story__card story__card--approach">
+                <div class="story__in">
+                  <span class="story__tag" data-rise><span>(02)</span> Approach</span>
+                  <p class="story__headline" data-rise style="--d: 1">Design <em>and</em> engineering, from idea to <em>launch.</em></p>
+                  <p class="story__text" data-rise style="--d: 2">I design and build websites, online stores and apps, and take each project end to end so it looks right and works properly.</p>
+                  <dl class="story__facts" data-rise style="--d: 3">
+                    <div><dt class="label">Projects shipped</dt><dd><span data-count>7</span></dd></div>
+                    <div><dt class="label">Platforms</dt><dd>Web, iOS &amp; Android</dd></div>
+                    <div><dt class="label">Clients</dt><dd>Worldwide</dd></div>
+                  </dl>
+                </div>
+              </li>
+
+              <li class="story__card story__card--step">
+                <div class="story__in">
+                  <span class="story__tag" data-rise><span>(03)</span> Process</span>
+                  <div class="story__step">
+                    <span class="story__num" data-rise style="--d: 1" aria-hidden="true">01</span>
+                    <span class="story__pips" data-rise style="--d: 2" aria-hidden="true"><i class="is-on"></i><i></i><i></i><i></i></span>
+                    <h3 data-rise style="--d: 2">Strategy</h3>
+                    <p class="story__text" data-rise style="--d: 3">Goals, audience and scope, agreed before anything is drawn.</p>
+                    <p class="story__meta" data-rise style="--d: 4">Discovery · Scope · Sitemap</p>
+                  </div>
+                </div>
+              </li>
+              <li class="story__card story__card--step">
+                <div class="story__in">
+                  <span class="story__tag" data-rise><span>(03)</span> Process</span>
+                  <div class="story__step">
+                    <span class="story__num" data-rise style="--d: 1" aria-hidden="true">02</span>
+                    <span class="story__pips" data-rise style="--d: 2" aria-hidden="true"><i class="is-on"></i><i class="is-on"></i><i></i><i></i></span>
+                    <h3 data-rise style="--d: 2">Design</h3>
+                    <p class="story__text" data-rise style="--d: 3">Interfaces, motion and prototypes you can click through.</p>
+                    <p class="story__meta" data-rise style="--d: 4">Interface · Motion · Prototype</p>
+                  </div>
+                </div>
+              </li>
+              <li class="story__card story__card--step">
+                <div class="story__in">
+                  <span class="story__tag" data-rise><span>(03)</span> Process</span>
+                  <div class="story__step">
+                    <span class="story__num" data-rise style="--d: 1" aria-hidden="true">03</span>
+                    <span class="story__pips" data-rise style="--d: 2" aria-hidden="true"><i class="is-on"></i><i class="is-on"></i><i class="is-on"></i><i></i></span>
+                    <h3 data-rise style="--d: 2">Build</h3>
+                    <p class="story__text" data-rise style="--d: 3">Fast, accessible code for the web, iOS and Android.</p>
+                    <p class="story__meta" data-rise style="--d: 4">Web · iOS · Android</p>
+                  </div>
+                </div>
+              </li>
+              <li class="story__card story__card--step">
+                <div class="story__in">
+                  <span class="story__tag" data-rise><span>(03)</span> Process</span>
+                  <div class="story__step">
+                    <span class="story__num" data-rise style="--d: 1" aria-hidden="true">04</span>
+                    <span class="story__pips" data-rise style="--d: 2" aria-hidden="true"><i class="is-on"></i><i class="is-on"></i><i class="is-on"></i><i class="is-on"></i></span>
+                    <h3 data-rise style="--d: 2">Launch</h3>
+                    <p class="story__text" data-rise style="--d: 3">Tested, deployed and handed over, ready to grow.</p>
+                    <p class="story__meta" data-rise style="--d: 4">Testing · Deploy · Handover</p>
+                  </div>
+                </div>
+              </li>
+
+              <li class="story__card story__card--services">
+                <div class="story__in">
+                  <span class="story__tag" data-rise><span>(04)</span> Services</span>
+                  <p class="story__headline story__headline--sm" data-rise style="--d: 1">From first sketch to the <em>App Store.</em></p>
+                  <ul class="story__services" data-list="services" data-rise style="--d: 2"></ul>
+                </div>
+              </li>
+
+              <li class="story__card story__card--cta">
+                <div class="story__in">
+                  <span class="story__tag" data-rise><span>(05)</span> Contact</span>
+                  <p class="story__headline story__headline--xl" data-rise style="--d: 1">Let's build it <em>together.</em></p>
+                  <div class="story__cta" data-rise style="--d: 2">
+                    <a class="story__orb" href="#contact" data-open-contact data-cursor="Hello"><span>Start a<br />project</span><span class="story__orb-arrow" aria-hidden="true">↗</span></a>
+                    <div class="story__alt">
+                      <span class="label">Or reach me on</span>
+                      <a class="link-arrow" data-whatsapp target="_blank" rel="noopener">WhatsApp ↗</a>
+                      <a class="link-arrow" data-email></a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ol>
+          </div>
+
+          <div class="story__foot" aria-hidden="true">
+            <span class="story__bar"><span class="story__bar-fill" id="story-bar"></span></span>
+            <span class="label story__hint">Scroll <span class="story__hint-arrow">⟶</span></span>
+          </div>
+        </section>
+      </section>
+
+      <!-- Selected work -->
+      <section class="selected section" id="selected">
+        <div class="wrap">
+          <div class="section__head">
+            <span class="label">Selected work</span>
+            <h2 class="display">Built for real businesses.</h2>
+            <a class="link-arrow" href="#work" data-fly-all>Explore all <span data-count>7</span> projects →</a>
+          </div>
+          <div class="cards" id="cards"></div>
+        </div>
+      </section>
+
+      <section class="cta section" aria-label="Start a project">
+        <div class="wrap cta__inner">
+          <span class="label">Available for new projects</span>
+          <h2 class="display cta__title">Let's build it together.</h2>
+          <div class="cta__btns">
+            <a class="btn btn--solid" href="#contact" data-open-contact>Start a project</a>
+            <a class="btn" data-whatsapp target="_blank" rel="noopener">Message on WhatsApp</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap footer__inner">
+        <div class="footer__sig" data-signature></div>
+        <div class="footer__row">
+          <span class="label">© <span data-year></span> Midhlaj</span>
+          <div class="socials" data-socials></div>
+          <a class="label footer__top" href="#top">Back to top ↑</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Project side panel -->
+    <aside class="panel" id="project-panel" role="dialog" aria-modal="true" aria-labelledby="pp-name" hidden>
+      <div class="panel__scrim" data-close></div>
+      <div class="panel__body" data-lenis-prevent>
+        <div class="panel__top">
+          <span class="label" id="pp-index"></span>
+          <button class="panel__close" data-close aria-label="Close project">Close ✕</button>
+        </div>
+        <h2 class="display panel__title" id="pp-name"></h2>
+        <dl class="panel__meta" id="pp-meta"></dl>
+        <p class="panel__desc" id="pp-desc"></p>
+        <ul class="chips chips--static" id="pp-tech"></ul>
+        <a class="btn btn--solid" id="pp-visit" target="_blank" rel="noopener">Visit site ↗</a>
+        <div class="panel__shots" id="pp-shots"></div>
+        <button class="panel__next link-arrow" id="pp-next"></button>
+      </div>
+    </aside>
+
+    <!-- Contact panel -->
+    <aside class="panel panel--contact" id="contact" role="dialog" aria-modal="true" aria-labelledby="contact-title" hidden>
+      <div class="panel__scrim" data-close></div>
+      <div class="panel__body" data-lenis-prevent>
+        <div class="panel__top">
+          <span class="label">Start a project</span>
+          <button class="panel__close" data-close aria-label="Close contact form">Close ✕</button>
+        </div>
+        <h2 class="display panel__title" id="contact-title">Tell me about your project.</h2>
+        <form class="form" id="contact-form" novalidate>
+          <div class="form__row">
+            <label class="field"><span class="label">Name</span><input name="name" required autocomplete="name" /></label>
+            <label class="field"><span class="label">Email</span><input name="email" type="email" required autocomplete="email" /></label>
+          </div>
+          <label class="field"><span class="label">Company</span><input name="company" autocomplete="organization" /></label>
+          <fieldset class="field">
+            <legend class="label">What do you need?</legend>
+            <div class="chips" data-chips="need" data-multi></div>
+          </fieldset>
+          <fieldset class="field">
+            <legend class="label">Budget
+              <label class="currency">
+                <span class="sr-only">Currency</span>
+                <select name="currency" id="currency-select"></select>
+              </label>
+            </legend>
+            <div class="chips" data-chips="budget"></div>
+          </fieldset>
+          <label class="field"><span class="label">About the project</span><textarea name="message" rows="5" placeholder="Your business, what you need and when you would like to launch."></textarea></label>
+          <div class="form__foot">
+            <button class="btn btn--solid" type="submit">Send enquiry</button>
+            <a class="btn" data-whatsapp target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+          <p class="form__status" id="form-status" role="status"></p>
+          <p class="form__alt">Or email <a data-email></a></p>
+        </form>
+      </div>
+    </aside>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

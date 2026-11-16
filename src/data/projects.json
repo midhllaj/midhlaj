@@ -1,0 +1,190 @@
+[
+  {
+    "id": "linaul",
+    "name": "Linaul",
+    "url": "https://linaul.com/",
+    "category": "SaaS · Logistics",
+    "year": 2026,
+    "description": "The operating system for trucking companies. Linaul brings a web dashboard, an operator app, a driver app and a live customer tracking page together around one record per trip, from quote and dispatch to live GPS, proof-of-delivery photos and invoicing.",
+    "tech": [
+      "Web dashboard",
+      "Operator app",
+      "Driver app",
+      "iOS · Android",
+      "Live GPS tracking"
+    ],
+    "featured": true,
+    "screenshots": [
+      "desktop-0.webp",
+      "desktop-1.webp",
+      "desktop-2.webp",
+      "desktop-3.webp",
+      "desktop-4.webp",
+      "mobile-0.webp",
+      "mobile-1.webp",
+      "mobile-2.webp",
+      "mobile-3.webp",
+      "mobile-4.webp",
+      "mobile-5.webp",
+      "mobile-6.webp",
+      "mobile-7.webp",
+      "mobile-8.webp",
+      "mobile-9.webp"
+    ]
+  },
+  {
+    "id": "nudge",
+    "name": "Nudge",
+    "url": "https://apps.apple.com/app/nudge-focus-timer-blocker/id6754453124",
+    "category": "iOS App · Productivity",
+    "year": 2026,
+    "description": "An iOS focus timer and app blocker built around a golden star companion that reacts to your habits in real time. I designed the interface and created the star character's animations.",
+    "tech": [
+      "UI design",
+      "Star mascot animation",
+      "SwiftUI",
+      "iOS · iPadOS"
+    ],
+    "featured": true,
+    "screenshots": [
+      "desktop-0.webp",
+      "desktop-1.webp",
+      "desktop-2.webp",
+      "desktop-3.webp",
+      "mobile-0.webp",
+      "mobile-1.webp",
+      "mobile-2.webp",
+      "mobile-3.webp",
+      "mobile-4.webp",
+      "mobile-5.webp"
+    ]
+  },
+  {
+    "id": "great-escapes",
+    "name": "Great Escapes Tourism",
+    "url": "https://www.getourism.com/",
+    "category": "Travel & Tourism",
+    "year": 2025,
+    "description": "Website for a travel agency selling tailored tour packages, flights, holidays and visa services, designed to feel as premium as the trips themselves.",
+    "tech": [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "featured": true,
+    "screenshots": [
+      "desktop-0.webp",
+      "desktop-1.webp",
+      "desktop-2.webp",
+      "desktop-3.webp",
+      "desktop-4.webp",
+      "mobile-0.webp",
+      "mobile-1.webp",
+      "mobile-2.webp",
+      "mobile-3.webp",
+      "mobile-4.webp"
+    ]
+  },
+  {
+    "id": "afwajh-group",
+    "name": "Afwajh Group of Companies",
+    "url": "https://www.afwajhgroup.com/",
+    "category": "Corporate",
+    "year": 2025,
+    "description": "Corporate website for a diversified group of companies spanning retail, hospitality, catering, trading, transport, technical services and labour supply. One clear home for every business line, with a store locator.",
+    "tech": [
+      "Next.js",
+      "React"
+    ],
+    "featured": true,
+    "screenshots": [
+      "desktop-0.webp",
+      "desktop-1.webp",
+      "desktop-2.webp",
+      "desktop-3.webp",
+      "desktop-4.webp",
+      "mobile-0.webp",
+      "mobile-1.webp",
+      "mobile-2.webp",
+      "mobile-3.webp",
+      "mobile-4.webp"
+    ]
+  },
+  {
+    "id": "dion-power",
+    "name": "Dion Power",
+    "url": "https://www.dionpower.in/",
+    "category": "Energy · Battery Tech",
+    "year": 2025,
+    "description": "Website for a developer of battery management systems (BMS) and provider of battery extended-warranty services. A dark, technical look with an animated energy-line hero.",
+    "tech": [
+      "React",
+      "Bootstrap"
+    ],
+    "featured": false,
+    "screenshots": [
+      "desktop-0.webp",
+      "desktop-1.webp",
+      "desktop-2.webp",
+      "desktop-3.webp",
+      "desktop-4.webp",
+      "mobile-0.webp",
+      "mobile-1.webp",
+      "mobile-2.webp",
+      "mobile-3.webp",
+      "mobile-4.webp"
+    ]
+  },
+  {
+    "id": "symbol-advertising",
+    "name": "Symbol Advertising",
+    "url": "https://www.symboladvertisement.com",
+    "category": "Advertising Agency",
+    "year": 2025,
+    "description": "Website for an advertising agency with more than 25 years in branding, digital, exhibition design and outdoor signage, presenting the full range of its services at a glance.",
+    "tech": [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "featured": true,
+    "screenshots": [
+      "desktop-0.webp",
+      "desktop-1.webp",
+      "desktop-2.webp",
+      "desktop-3.webp",
+      "desktop-4.webp",
+      "mobile-0.webp",
+      "mobile-1.webp",
+      "mobile-2.webp",
+      "mobile-3.webp",
+      "mobile-4.webp"
+    ]
+  },
+  {
+    "id": "lovin-flowers",
+    "name": "Lovin Flowers",
+    "url": "https://lovinflowers.vercel.app/",
+    "category": "E-commerce · Florist",
+    "year": 2025,
+    "description": "Online store for a luxury florist, with the full collection, a custom bouquet builder, event floristry and same-day delivery. Orders go straight to WhatsApp.",
+    "tech": [
+      "Next.js",
+      "React",
+      "Vercel"
+    ],
+    "featured": true,
+    "screenshots": [
+      "desktop-0.webp",
+      "desktop-1.webp",
+      "desktop-2.webp",
+      "desktop-3.webp",
+      "desktop-4.webp",
+      "mobile-0.webp",
+      "mobile-1.webp",
+      "mobile-2.webp",
+      "mobile-3.webp",
+      "mobile-4.webp"
+    ]
+  }
+]
