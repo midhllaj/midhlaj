@@ -200,7 +200,7 @@ function frame(time, deltaTime) {
     heroBottom.style.transform = `translate3d(0, ${(-heroP * 60).toFixed(1)}px, 0)`;
     heroName.style.opacity = clamp(1 - heroP * 1.6);
     heroName.style.transform = `translate3d(0, ${(-heroP * 120).toFixed(1)}px, 0)`;
-    heroSig.style.opacity = clamp(1 - heroP * 3) * (isMobile ? 0.8 : 0.55); // a touch brighter on phones, where the line is shorter
+    heroSig.style.opacity = clamp(1 - heroP * 3) * 0.8; // bright enough for the glow to read
   }
   if (!exp) return;
 
