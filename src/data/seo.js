@@ -11,7 +11,8 @@ export const DESCRIPTION =
   'Midhlaj is a website developer and designer in India building fast websites, online stores, web apps and iOS & Android apps for businesses worldwide.';
 
 const list = (items) => items.slice(0, -1).join(', ') + ' and ' + items[items.length - 1];
-const work = projects.map((p) => p.name);
+// public websites after the two apps (private client tools have no url and are described separately)
+const work = projects.slice(2).filter((p) => p.url).map((p) => p.name);
 
 export const faq = [
   {
@@ -24,7 +25,7 @@ export const faq = [
   },
   {
     q: 'What has Midhlaj built?',
-    a: `Projects include Linaul, a platform for trucking companies with a web dashboard, operator and driver apps and live GPS tracking; Nudge, an iOS focus timer and app blocker; and websites for ${list(work.slice(2))}.`,
+    a: `Projects include Linaul, a platform for trucking companies with a web dashboard, operator and driver apps and live GPS tracking; Nudge, an iOS focus timer and app blocker; an estimate and invoice generator for an event planning company; and websites for ${list(work)}.`,
   },
   {
     q: 'How much does a website cost?',
@@ -170,7 +171,7 @@ Midhlaj is a website developer and designer based in India who works with client
 ${site.services.map((s) => `- ${s}`).join('\n')}
 
 ## Work
-${projects.map((p) => `- [${p.name}](${p.url}) (${p.category}): ${p.description}`).join('\n')}
+${projects.map((p) => `- ${p.url ? `[${p.name}](${p.url})` : p.name} (${p.category}): ${p.description}`).join('\n')}
 
 ## FAQ
 ${faq.map(({ q, a }) => `### ${q}\n${a}`).join('\n\n')}

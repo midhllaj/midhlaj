@@ -60,6 +60,33 @@
     ]
   },
   {
+    "id": "evam-invoice",
+    "name": "Evam Invoice Generator",
+    "category": "Web App · Billing",
+    "year": 2026,
+    "description": "A private billing tool built for Evam Event Planners. The team fills in the event, client, advance and line items, amounts total themselves, and a live preview shows the estimate or cash bill in one of four branded themes (Classic, Navy, Emerald and Letterhead) before it downloads as a PDF. Optional GST and a mobile layout for quoting on site.",
+    "tech": [
+      "Web app",
+      "PDF export",
+      "Estimates · Cash bills",
+      "GST"
+    ],
+    "featured": true,
+    "screenshots": [
+      "desktop-0.webp",
+      "desktop-1.webp",
+      "desktop-2.webp",
+      "desktop-3.webp",
+      "desktop-4.webp",
+      "desktop-5.webp",
+      "mobile-0.webp",
+      "mobile-1.webp",
+      "mobile-2.webp",
+      "mobile-3.webp",
+      "mobile-4.webp"
+    ]
+  },
+  {
     "id": "great-escapes",
     "name": "Great Escapes Tourism",
     "url": "https://www.getourism.com/",
@@ -162,6 +189,31 @@
     ]
   },
   {
+    "id": "symbol-business-setup",
+    "name": "Symbol Business Setup",
+    "url": "https://www.symbolbusinesssetup.com/",
+    "category": "Business Services · Dubai",
+    "year": 2026,
+    "description": "Website for a Dubai business setup consultancy covering mainland, free zone and offshore company formation, licensing and Golden Visa services. It opens on an aerial video of Dubai and ends with a free consultation form that sorts each enquiry by service.",
+    "tech": [
+      "React",
+      "Vite"
+    ],
+    "featured": true,
+    "screenshots": [
+      "desktop-0.webp",
+      "desktop-1.webp",
+      "desktop-2.webp",
+      "desktop-3.webp",
+      "desktop-4.webp",
+      "mobile-0.webp",
+      "mobile-1.webp",
+      "mobile-2.webp",
+      "mobile-3.webp",
+      "mobile-4.webp"
+    ]
+  },
+  {
     "id": "lovin-flowers",
     "name": "Lovin Flowers",
     "url": "https://lovinflowers.vercel.app/",
@@ -172,6 +224,34 @@
       "Next.js",
       "React",
       "Vercel"
+    ],
+    "featured": true,
+    "screenshots": [
+      "desktop-0.webp",
+      "desktop-1.webp",
+      "desktop-2.webp",
+      "desktop-3.webp",
+      "desktop-4.webp",
+      "mobile-0.webp",
+      "mobile-1.webp",
+      "mobile-2.webp",
+      "mobile-3.webp",
+      "mobile-4.webp"
+    ]
+  },
+  {
+    "id": "nexes-wedding",
+    "name": "Nexes Wedding Company",
+    "url": "https://nexes-wedding-company-umber.vercel.app/",
+    "category": "Wedding Photography",
+    "year": 2026,
+    "description": "Website for a wedding photography team in Kunnamkulam that shoots Guruvayur temple weddings across Thrissur. A scroll-driven opening leads into the wedding day told in moments, recent couples and the albums. Visitors pick an event and a date, and WhatsApp opens with the enquiry already written.",
+    "tech": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "GSAP",
+      "Lenis"
     ],
     "featured": true,
     "screenshots": [

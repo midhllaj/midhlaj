@@ -73,7 +73,10 @@ export function fillProjectPanel(projects, index, onNext) {
     $('pp-tech').appendChild(li);
   });
   const visit = $('pp-visit');
-  visit.href = p.url;
+  // private client tools have no public link: no button at all
+  visit.hidden = !p.url;
+  if (p.url) visit.href = p.url;
+  else visit.removeAttribute('href');
   const store = /apps\.apple\.com/.test(p.url) ? 'App Store' : /play\.google\.com/.test(p.url) ? 'Google Play' : '';
   visit.textContent = store ? `View on ${store} ↗` : 'Visit site ↗';
   visit.setAttribute('aria-label', `${store ? `View ${p.name} on ${store}` : `Visit ${p.name}`} (opens in a new tab)`);
