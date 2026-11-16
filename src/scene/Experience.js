@@ -185,6 +185,11 @@ export class Experience {
       u.uGridScale.value = cell;
       const faceH = rows * cell;
       u.uGridOffset.value.set(0, visH / 2 - visH * top - faceH / 2 - (visH * avail - faceH) / 2);
+      // where the face lands on screen (px), so the CSS can tuck the signature behind the neck
+      const faceHpx = (faceH / visH) * h;
+      const root = document.documentElement.style;
+      root.setProperty('--face-top', `${(h * top + (h * avail - faceHpx) / 2).toFixed(1)}px`);
+      root.setProperty('--face-h', `${faceHpx.toFixed(1)}px`);
     }
     this.size = { w, h };
   }

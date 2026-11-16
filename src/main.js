@@ -200,7 +200,7 @@ function frame(time, deltaTime) {
     heroBottom.style.transform = `translate3d(0, ${(-heroP * 60).toFixed(1)}px, 0)`;
     heroName.style.opacity = clamp(1 - heroP * 1.6);
     heroName.style.transform = `translate3d(0, ${(-heroP * 120).toFixed(1)}px, 0)`;
-    heroSig.style.opacity = clamp(1 - heroP * 3) * (isMobile ? 0.9 : 0.55); // brighter on phones, where it sits over the face
+    heroSig.style.opacity = clamp(1 - heroP * 3) * (isMobile ? 0.8 : 0.55); // a touch brighter on phones, where the line is shorter
   }
   if (!exp) return;
 
@@ -383,7 +383,7 @@ async function boot() {
         mapImage,
         photoImage,
         isMobile,
-        getTextTop: () => heroBottom.getBoundingClientRect().top + lenis.animatedScroll,
+        getTextTop: () => Math.min(heroBottom.getBoundingClientRect().top, heroName.getBoundingClientRect().top) + lenis.animatedScroll,
         labelsEl: $('#fly-labels'),
         onHover: (item) => {
           cursor.setLabel(item ? 'View' : '');
