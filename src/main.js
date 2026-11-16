@@ -411,7 +411,7 @@ async function boot() {
   if (!reduced) {
     gsap.set(loaderSig, { opacity: 1 });
     await drawSignature(loaderSig, { duration: 2.5, delay: 0.35 });
-    await gsap.to(loaderSig, { opacity: 0, y: -10, duration: 0.6, delay: 0.25, ease: 'power2.in' });
+    await gsap.to(loaderSig, { opacity: 0, y: -10, duration: 0.6, delay: 0.6, ease: 'power2.in' }); // let the ink sit for a beat
   }
   exp?.intro();
   document.body.classList.remove('is-loading');
