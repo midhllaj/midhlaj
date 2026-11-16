@@ -16,7 +16,7 @@ const work = projects.map((p) => p.name);
 export const faq = [
   {
     q: 'Who is Midhlaj?',
-    a: `Midhlaj is a website developer and designer based in India. Midhlaj designs and builds websites, online stores, web apps and iOS and Android apps for businesses, startups and founders around the world, taking each project from the first idea to launch day.`,
+    a: `Midhlaj is a website developer and designer based in India. Midhlaj designs and builds websites, online stores, web apps and iOS and Android apps for businesses, startups and founders around the world, taking each project from the first idea to launch day. Midhlaj's portfolio, work and contact details are at midhlaj.co.`,
   },
   {
     q: 'What services does Midhlaj offer?',
@@ -65,7 +65,7 @@ export function jsonLd(url) {
       '@type': 'Person',
       '@id': person,
       name: site.name,
-      alternateName: ['Midhllaj', 'midhllaj'],
+      alternateName: ['Midhllaj', 'midhllaj', 'midhlaj.co'],
       jobTitle: 'Website Developer & Designer',
       description: DESCRIPTION,
       url: `${url}/`,
@@ -81,7 +81,7 @@ export function jsonLd(url) {
       '@id': `${url}/#website`,
       url: `${url}/`,
       name: site.name,
-      alternateName: 'Midhlaj, Website Developer & Designer',
+      alternateName: ['midhlaj.co', 'Midhlaj, Website Developer & Designer'],
       inLanguage: 'en',
       publisher: { '@id': person },
     },
