@@ -226,7 +226,7 @@ function frame(time, deltaTime) {
     outroShown = true;
     outro.classList.add('is-visible');
     story.classList.add('is-visible');
-    drawSignature(outroSig, { duration: 2.5, delay: 0.2 });
+    drawSignature(outroSig, { duration: 1.6, delay: 0.1 });
   } else if (!showOutro && outroShown && (flyP < 0.9 || y > L.aboutEnd + L.vh)) {
     outroShown = false;
     outro.classList.remove('is-visible');
@@ -410,8 +410,8 @@ async function boot() {
 
   if (!reduced) {
     gsap.set(loaderSig, { opacity: 1 });
-    await drawSignature(loaderSig, { duration: 2.5, delay: 0.35 });
-    await gsap.to(loaderSig, { opacity: 0, y: -10, duration: 0.6, delay: 0.6, ease: 'power2.in' }); // let the ink sit for a beat
+    await drawSignature(loaderSig, { duration: 1.6, delay: 0.15 });
+    await gsap.to(loaderSig, { opacity: 0, y: -10, duration: 0.5, delay: 0.4, ease: 'power2.in' }); // let the ink sit for a beat
   }
   exp?.intro();
   document.body.classList.remove('is-loading');
@@ -424,7 +424,7 @@ async function boot() {
   gsap.fromTo(heroName, { opacity: 0 }, { opacity: 1, duration: 0.01, delay: exp ? 0.6 : 0, clearProps: 'opacity' });
   gsap.fromTo(heroName.firstElementChild, { yPercent: 110 }, { yPercent: 0, duration: 1.6, ease: 'expo.out', delay: exp ? 0.6 : 0 });
   // the big grey signature line slowly writes itself across the hero
-  if (!reduced) drawSignature(heroSig, { duration: 5.5, delay: exp ? 1.4 : 0.3 });
+  if (!reduced) drawSignature(heroSig, { duration: 2.2, delay: exp ? 0.5 : 0.2 });
   await gsap.to(loader, { opacity: 0, duration: reduced ? 0.2 : 0.8, ease: 'power2.out' });
   loader.remove();
   drawSignature($('.header__logo'), { duration: 1.6 });
