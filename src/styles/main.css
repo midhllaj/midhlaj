@@ -202,7 +202,11 @@ body.is-loading .header, body.is-loading .hero__bottom, body.is-loading .hero__n
   opacity: 0.55;
   pointer-events: none;
 }
-.hero__sig svg path { stroke: #9a9a9a; }
+.hero__sig svg path { stroke: #d6d6d2; }
+/* soft neon-ink glow: a tight bright halo plus a wide faint bloom */
+.hero__sig svg {
+  filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.75)) drop-shadow(0 0 9px rgba(255, 255, 255, 0.4)) drop-shadow(0 0 26px rgba(200, 210, 255, 0.25));
+}
 .hero__bottom {
   position: absolute;
   left: var(--gutter); right: var(--gutter);
