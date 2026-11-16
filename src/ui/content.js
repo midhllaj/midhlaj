@@ -24,6 +24,11 @@ export function renderContent(projects, { onCard }) {
     a.href = `mailto:${site.email}`;
     a.textContent = site.email;
   });
+  document.querySelectorAll('[data-phone]').forEach((a) => {
+    if (!site.phone) return a.remove();
+    a.href = `tel:${site.phone}`;
+    if (!a.textContent.trim()) a.textContent = site.phoneLabel || site.phone;
+  });
 
   document.querySelectorAll('[data-socials]').forEach((box) => {
     const keys = (box.dataset.socials || 'ig,li,gh,wa').split(',');
@@ -31,10 +36,11 @@ export function renderContent(projects, { onCard }) {
     keys.forEach((k) => {
       const [label, key] = SOCIALS[k];
       const href = k === 'wa' ? (site.whatsapp ? `https://wa.me/${site.whatsapp}` : '') : site.socials[key];
+      if (!href) return; // not set in src/config.js yet: leave it out rather than show a dead link
       const a = el('a', null, label);
-      a.href = href || '#';
-      if (href) { a.target = '_blank'; a.rel = 'noopener'; }
-      else a.title = `${label} link — add it in src/config.js`;
+      a.href = href;
+      a.target = '_blank';
+      a.rel = 'noopener';
       box.appendChild(a);
     });
   });
