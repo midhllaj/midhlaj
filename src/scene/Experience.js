@@ -181,14 +181,16 @@ export class Experience {
       const top = 64 / h; // header
       const textTop = (this.getTextTop?.() ?? h * 0.6) / h;
       const avail = Math.max(0.3, textTop - top - 0.02);
-      const cell = Math.min((visW * 0.9) / cols, (visH * avail) / rows);
+      const cell = Math.min((visW * 0.98) / cols, (visH * avail) / rows);
       u.uGridScale.value = cell;
       const faceH = rows * cell;
-      u.uGridOffset.value.set(0, visH / 2 - visH * top - faceH / 2 - (visH * avail - faceH) / 2);
-      // where the face lands on screen (px), so the CSS can tuck the signature behind the neck
       const faceHpx = (faceH / visH) * h;
+      // sit the shoulders right on the name (no gap); any spare height goes up under the header
+      const faceTopPx = textTop * h - faceHpx + 4;
+      u.uGridOffset.value.set(0, visH / 2 - (faceTopPx / h) * visH - faceH / 2);
+      // where the face lands on screen (px), so the CSS can tuck the signature behind the neck
       const root = document.documentElement.style;
-      root.setProperty('--face-top', `${(h * top + (h * avail - faceHpx) / 2).toFixed(1)}px`);
+      root.setProperty('--face-top', `${faceTopPx.toFixed(1)}px`);
       root.setProperty('--face-h', `${faceHpx.toFixed(1)}px`);
     }
     this.size = { w, h };
