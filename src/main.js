@@ -200,7 +200,7 @@ function frame(time, deltaTime) {
     heroBottom.style.transform = `translate3d(0, ${(-heroP * 60).toFixed(1)}px, 0)`;
     heroName.style.opacity = clamp(1 - heroP * 1.6);
     heroName.style.transform = `translate3d(0, ${(-heroP * 120).toFixed(1)}px, 0)`;
-    heroSig.style.opacity = clamp(1 - heroP * 3) * 0.55;
+    heroSig.style.opacity = clamp(1 - heroP * 3) * (isMobile ? 0.9 : 0.55); // brighter on phones, where it sits over the face
   }
   if (!exp) return;
 
