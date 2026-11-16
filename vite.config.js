@@ -2,12 +2,10 @@ import { defineConfig } from 'vite';
 import { TITLE, DESCRIPTION, faqHtml, jsonLd, robotsTxt, sitemapXml, llmsTxt } from './src/data/seo.js';
 
 // Absolute site URL for canonical / Open Graph tags, the sitemap and structured data.
-// On Vercel it comes from the project's production domain automatically; override with SITE_URL=https://…
-const siteUrl = (
-  process.env.SITE_URL ||
-  (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : '') ||
-  'https://midhlaj-tawny.vercel.app'
-).replace(/\/$/, '');
+// The real domain is midhlaj.co (Vercel redirects midhlaj.co → www.midhlaj.co, so www is the canonical one).
+// Deliberately not taken from Vercel's VERCEL_PROJECT_PRODUCTION_URL: that can be the *.vercel.app address,
+// which tells Google the vercel.app copy is the original. Override with SITE_URL=https://… if the domain changes.
+const siteUrl = (process.env.SITE_URL || 'https://www.midhlaj.co').replace(/\/$/, '');
 
 // Google Search Console "HTML tag" verification: set GOOGLE_SITE_VERIFICATION to the content="…" value
 // (in Vercel → Settings → Environment Variables), then redeploy.
