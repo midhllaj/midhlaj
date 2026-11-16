@@ -1,0 +1,13 @@
+node_modules
+dist
+.DS_Store
+raw/*.jpg
+raw/*.jpeg
+raw/*.png
+raw/*.heic
+!raw/README.md
+.env.local
+# screenshots and page strips captured by `npm run shots` (regenerable, not deployed)
+raw/shots/
+raw/strips/
+raw/*.webp

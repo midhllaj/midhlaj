@@ -1,0 +1,30 @@
+{
+  "name": "midhlaj-portfolio",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Midhlaj — Web Designer & Developer. Scroll to fly through the work.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "shots": "node scripts/shots.js",
+    "atlas": "node scripts/atlas.js && node scripts/render-mosaic.js",
+    "assets": "node scripts/assets.js && node scripts/render-mosaic.js"
+  },
+  "dependencies": {
+    "@fontsource-variable/inter": "^5.3.0",
+    "@fontsource-variable/inter-tight": "^5.3.0",
+    "@fontsource/instrument-serif": "^5.3.0",
+    "gsap": "^3.13.0",
+    "lenis": "^1.3.0",
+    "three": "^0.180.0"
+  },
+  "devDependencies": {
+    "@imgly/background-removal-node": "^1.4.5",
+    "potrace": "^2.1.8",
+    "puppeteer": "^24.0.0",
+    "sharp": "^0.34.0",
+    "vite": "^7.0.0"
+  }
+}
