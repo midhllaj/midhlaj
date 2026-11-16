@@ -3,24 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>Midhlaj — Designer &amp; Developer · Websites, Web Apps &amp; Mobile Apps</title>
-    <meta name="description" content="Midhlaj designs and builds websites, web platforms and mobile apps for businesses, startups and founders anywhere in the world, from brand sites and online stores to SaaS platforms and iOS apps." />
+    <title>__TITLE__</title>
+    <meta name="description" content="__DESCRIPTION__" />
+    <meta name="author" content="Midhlaj" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
     <meta name="theme-color" content="#0a0a0b" />
+    <!--SEO:VERIFY-->
     <link rel="canonical" href="__SITE_URL__/" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Midhlaj — Designer & Developer" />
-    <meta property="og:description" content="Websites, web platforms and mobile apps for businesses and founders, wherever they are." />
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+    <link rel="me" href="https://www.instagram.com/midhllaj/" />
+    <meta property="og:type" content="profile" />
+    <meta property="og:site_name" content="Midhlaj" />
+    <meta property="og:locale" content="en_IN" />
+    <meta property="og:title" content="Midhlaj: Website Developer &amp; Designer" />
+    <meta property="og:description" content="Websites, online stores, web apps and mobile apps for businesses and founders, wherever they are." />
     <meta property="og:image" content="__SITE_URL__/og.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Midhlaj's face made from a mosaic of website and app screenshots" />
     <meta property="og:url" content="__SITE_URL__/" />
+    <meta property="profile:first_name" content="Midhlaj" />
+    <meta property="profile:username" content="midhllaj" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Midhlaj: Website Developer &amp; Designer" />
+    <meta name="twitter:description" content="Websites, online stores, web apps and mobile apps for businesses and founders, wherever they are." />
     <meta name="twitter:image" content="__SITE_URL__/og.jpg" />
-    <script type="application/ld+json">
-      { "@context": "https://schema.org", "@type": "Person", "name": "Midhlaj", "jobTitle": "Designer & Developer", "url": "__SITE_URL__/", "image": "__SITE_URL__/assets/about.webp" }
-    </script>
+    <!--SEO:JSONLD-->
   </head>
   <body>
     <a class="skip" href="#selected">Skip to content</a>
@@ -91,7 +101,7 @@
             <a class="btn btn--pill" href="#work" data-cursor="Fly">Explore the work <span class="btn__icon" aria-hidden="true">↓</span></a>
           </div>
         </div>
-        <h1 class="hero__name" id="hero-name"><span>Midhlaj</span><span class="sr-only"> — Designer &amp; Developer</span></h1>
+        <h1 class="hero__name" id="hero-name"><span>Midhlaj</span><span class="sr-only"> — Website Developer &amp; Designer</span></h1>
       </section>
 
       <!-- Fly-through (canvas is fixed behind; this section just provides scroll distance) -->
@@ -259,6 +269,19 @@
             <a class="link-arrow" href="#work" data-fly-all>Explore all <span data-count>7</span> projects →</a>
           </div>
           <div class="cards" id="cards"></div>
+        </div>
+      </section>
+
+      <!-- FAQ: plain answers for search engines and AI assistants (edit in src/data/seo.js) -->
+      <section class="faq section" id="faq" aria-labelledby="faq-title">
+        <div class="wrap">
+          <div class="section__head">
+            <span class="label">Questions</span>
+            <h2 class="display" id="faq-title">Good to know.</h2>
+          </div>
+          <div class="faq__list">
+            <!--SEO:FAQ-->
+          </div>
         </div>
       </section>
 

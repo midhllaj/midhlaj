@@ -210,9 +210,13 @@ export class Experience {
 
   update(time, dt) {
     if (!this.active) return;
-    dt = Math.min(dt, 1 / 20);
-    const { heroP, flyP } = this.scroll;
+    dt = Number.isFinite(dt) ? Math.min(Math.max(dt, 0), 1 / 20) : 1 / 60;
+    const fin = (v) => (Number.isFinite(v) ? v : 0);
+    const heroP = fin(this.scroll.heroP);
+    const flyP = fin(this.scroll.flyP);
     const s = this.s;
+    // one bad frame (e.g. measured while the tab was hidden) must never freeze the flight for good
+    for (const k in s) if (!Number.isFinite(s[k])) s[k] = 0;
 
     // scatter out on the way in, regroup into the face at the end of the flight
     const scatterTarget = smooth(0.04, 0.85, heroP) * (1 - smooth(0.9, 0.985, flyP));
