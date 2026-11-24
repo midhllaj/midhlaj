@@ -66,7 +66,7 @@ export function jsonLd(url) {
       '@type': 'Person',
       '@id': person,
       name: site.name,
-      alternateName: ['Midhllaj', 'midhllaj', 'midhlaj.co'],
+      alternateName: ['Mohammed Midhlaj', 'Midhllaj', 'midhllaj', 'midhlaj.co', 'midhlaj.co_'],
       jobTitle: 'Website Developer & Designer',
       description: DESCRIPTION,
       url: `${url}/`,

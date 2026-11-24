@@ -13,7 +13,7 @@ export const site = {
   socials: {
     instagram: 'https://www.instagram.com/midhlaj.co_/', // full URLs; empty ones are hidden
     linkedin: 'https://www.linkedin.com/in/mohammed-midhlaj-a10215365/',
-    github: '',
+    github: 'https://github.com/midhllaj',
   },
   // Contact form: create a free form at https://formspree.io and paste its ID (the part after /f/).
   // Leave empty and "Send enquiry" opens the visitor's email app with the brief pre-filled instead.
