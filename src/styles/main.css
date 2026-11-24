@@ -18,7 +18,8 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-html { background: var(--bg); color: var(--fg); -webkit-text-size-adjust: 100%; }
+/* clip (not hidden) so phones can't pan the page sideways, without making a new scroll container */
+html { background: var(--bg); color: var(--fg); -webkit-text-size-adjust: 100%; overflow-x: clip; }
 html.lenis, html.lenis body { height: auto; }
 .lenis.lenis-smooth { scroll-behavior: auto !important; }
 .lenis.lenis-stopped { overflow: hidden; }
@@ -654,8 +655,8 @@ body.in-fly .fly__hud { opacity: 1; }
   .hero { display: flex; flex-direction: column; justify-content: flex-end; padding-bottom: calc(var(--gutter) + env(safe-area-inset-bottom, 0px)); }
   .hero__name { position: static; order: -1; margin-bottom: max(14px, var(--name-bottom, 14px)); }
   .hero__bottom { position: static; padding: 0 var(--gutter); flex-direction: column; align-items: stretch; gap: 18px; }
-  .hero__inner { max-width: none; }
-  .hero__ctas { justify-content: space-between; }
+  .hero__inner { max-width: none; justify-items: center; text-align: center; }
+  .hero__ctas { justify-content: center; }
   /* phones: the signature runs behind the face at neck height, showing either side of the neck */
   .hero__sig { left: var(--gutter); top: calc(var(--face-top, 14vh) + var(--face-h, 48vh) * 0.7); width: calc(100vw - 2 * var(--gutter)); transform: translateY(-50%); --sig-px: 1.7; }
   .hero__sig svg path { stroke: #e4e4e1; }

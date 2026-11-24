@@ -11,8 +11,8 @@ export const site = {
   phone: '+918714801971', // for tap-to-call links
   phoneLabel: '+91 87148 01971',
   socials: {
-    instagram: 'https://www.instagram.com/midhllaj/', // full URLs; empty ones are hidden
-    linkedin: '',
+    instagram: 'https://www.instagram.com/midhlaj.co_/', // full URLs; empty ones are hidden
+    linkedin: 'https://www.linkedin.com/in/mohammed-midhlaj-a10215365/',
     github: '',
   },
   // Contact form: create a free form at https://formspree.io and paste its ID (the part after /f/).
